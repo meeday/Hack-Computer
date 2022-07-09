@@ -1,0 +1,16 @@
+// Helper Chip 3 input AND Gate
+
+/**
+ * And gate: 
+ * out = 1 if (a == 1 and b == 1 and c == 1)
+ *       0 otherwise
+ */
+
+CHIP And3 {
+    IN a, b, c;
+    OUT out;
+
+    PARTS:
+    And(a=a, b=b, out=d);
+    And(a=d, b=c, out=out);
+}
