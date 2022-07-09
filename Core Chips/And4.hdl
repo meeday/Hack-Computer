@@ -1,0 +1,17 @@
+// Helper Chip 4 input AND Gate
+
+/**
+ * And gate: 
+ * out = 1 if (a == 1 and b == 1 and c == 1 and d == 1)
+ *       0 otherwise
+ */
+
+CHIP And4 {
+    IN a, b, c, d;
+    OUT out;
+
+    PARTS:
+    And(a=a, b=b, out=ao);
+    And(a=c, b=d, out= bo);
+    And(a=ao, b=bo, out=out);
+}
